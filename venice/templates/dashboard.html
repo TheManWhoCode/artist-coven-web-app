@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>Highway Blog - Free CSS Template</title>
+<!-- 
+
+Highway Template
+
+https://templatemo.com/tm-520-highway
+
+-->
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="apple-touch-icon" href="apple-touch-icon.png">
+
+        {% load static %}<link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+        {% load static %}<link rel="stylesheet" href="{% static 'css/bootstrap-theme.min.css' %}">
+        {% load static %}<link rel="stylesheet" href="{% static 'css/fontAwesome.css' %}">
+        {% load static %}<link rel="stylesheet" href="{% static 'css/light-box.css' %}">
+        {% load static %}<link rel="stylesheet" href="{% static 'css/templatemo-style.css' %}">
+
+        <link href="https://fonts.googleapis.com/css?family=Kanit:100,200,300,400,500,600,700,800,900" rel="stylesheet">
+
+        {% load static %}<script src="{% static 'js/vendor/modernizr-2.8.3-respond-1.4.2.min.js' %}"></script>
+    </head>
+    <style>
+        .page-heading {
+  background-image: url('/static/images/background.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+  width: 100%;
+  text-align: center;
+}
+    </style>
+<body>
+
+    <nav>
+        <div class="logo">
+            <a href="index.html">Artist<em>Coven</em></a>
+        </div>
+      <div class="menu-icon">
+        <span></span>
+      </div>
+    </nav>
+
+    <div class="page-heading">
+        <div class="container">
+            <div class="heading-content">
+                <h1>Our <em>Blog</em></h1>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="blog-entries">
+        <div class="container">
+            <div class="col-md-9">
+                <div class="blog-posts">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="blog-post">
+                                {% load static %}<img src="{% static 'images/create.png' %}" alt="">
+                                <div class="text-content">
+                                    <span><a href="#"></a><a href="#">1. History</a><a href="#"></a></span>
+                                    <h2>What is Artist Coven ?</h2>
+                                    <p><strong>Artist Coven</strong> is a group chat that originally was created exclusively for artists in Roblox group.
+                                        <br><br>Prior to April 17, <strong>Artist Coven</strong> was called <strong>"Roblox Artists"</strong>. Since then the name was changed to <strong>"Artist Coven"</strong> due to it has no longer associated with the main Roblox group.</p>
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-12">
+                            <div class="blog-post">
+                                <img src="img/blog_post_2.png" alt="">
+                                <div class="text-content">
+                                    <span><a href="#"></a><a href="#">2. Overview</a><a href="#"></a></span>
+                                    <h2>About Artist Coven</h2>
+                                    <p>The group was created by <strong>Phan Đa</strong> in September 5th 2019.
+                                    <br><br>The genre artworks posted by members of the group are various.</p>
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-12">
+                            <div class="blog-post">
+                                {% load static %}<img src="{% static 'images/feature-guide.jpg' %}" alt="">
+                                <div class="text-content">
+                                    <span><a href="#"></a><a href="#">3. Development</a><a href="#"></a></span>
+                                    <h2>What is this web about ?</h2>
+                                    <p>Members of the group can <strong>sign up</strong> as blog user, <strong>upload</strong> their artwork to the blog and <strong>admire</strong> them in the gallery section.
+                                    <br><br>The features which is located in the right corner at the top could be used for interacting with the web app</p>
+
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="side-bar">
+                    <div class="search">
+                        <fieldset>
+                            <input name="search" type="text" class="form-control" id="search" placeholder="ÒwÓ" required="">
+                        </fieldset>
+                    </div>
+                    <div class="archives">
+                        <div class="sidebar-heding">
+                            <h2>Contributors</h2>
+                        </div>
+                        {% for user in user_list %}
+                        <ul>
+                            <li><a href="#">> {{user.username}}</a></li>
+
+                        </ul>
+                        {% endfor %}
+                    </div>
+                    <div class="recent-posts">
+                        <div class="sidebar-heding">
+                            <h2>References</h2>
+                        </div>
+                        <ul>
+                            <li><a href="https://www.facebook.com/Baconevv">
+                                {% load static %}<img src="{% static 'images/phanda-1.jpg' %}" alt="Recent Post 1">
+                                <div class="text">
+                                    <h6>About Phan Đa</h6>
+
+                                </div>
+                            </li></a>
+
+                        </ul>
+                    </div>
+                    <div class="categories">
+                        <div class="sidebar-heding">
+                            <h2>Notable genres</h2>
+                        </div>
+                        <ul>
+                            <li style="color:#26832C";> Military</li>
+                            <li style="color:#D673B0";> Furniture</li>
+                            <li style="color:#00FF68";> Bondage</li>
+                            <li style="color:#999999";> Gothic</li>
+                            <li style="color:#FF00A6";> Furry</li>
+                            <li style="color:#73D6D6";> Duck</li>
+
+                        </ul>
+                    </div>
+                    <div class="categories">
+                        <div class="sidebar-heding">
+                            <h2>Notable Topics</h2>
+                        </div>
+                        <ul>
+                            <li style="color:#FF0404";> <strong>ROBLOX</strong></li>
+                            <li style="color:#9BE746";> <strong>Terraria</strong></li>
+
+                            <li> <strong style="color:#E23B13";>Hot </strong><strong style="color:#FFF22C";>Wheels</strong></li>
+                            <li style="color:#FFAE39";> <strong>Lupin</strong></li>
+                            <li style="color:#FF7CEF";> <strong>Jojo</strong></li>
+                            <li style="color:#2EC400";> <strong>Minecraft</strong></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <footer>
+        <div class="container-fluid">
+            <div class="col-md-12">
+                <p>Modified and Edited by Phan Đa</p>
+            </div>
+        </div>
+    </footer>
+
+
+      <!-- Modal button -->
+    <div class="popup-icon">
+      <button id="modBtn" class="modal-btn"><img src="img/contact-icon.png" alt=""></button>
+    </div>  
+
+    <!-- Modal -->
+    <div id="modal" class="modal">
+      <!-- Modal Content -->
+      <div class="modal-content">
+        <!-- Modal Header -->
+        <div class="modal-header">
+          <h3 class="header-title">Say hello to <em>Highway</em></h3>
+          <div class="close-btn"><img src="img/close_contact.png" alt=""></div>    
+        </div>
+        <!-- Modal Body -->
+        <div class="modal-body">
+          <div class="col-md-6 col-md-offset-3">
+            <form id="contact" action="" method="post">
+                <div class="row">
+                    <div class="col-md-12">
+                      <fieldset>
+                        <input name="name" type="text" class="form-control" id="name" placeholder="Your name..." required="">
+                      </fieldset>
+                    </div>
+                    <div class="col-md-12">
+                      <fieldset>
+                        <input name="email" type="email" class="form-control" id="email" placeholder="Your email..." required="">
+                      </fieldset>
+                    </div>
+                    <div class="col-md-12">
+                      <fieldset>
+                        <textarea name="message" rows="6" class="form-control" id="message" placeholder="Your message..." required=""></textarea>
+                      </fieldset>
+                    </div>
+                    <div class="col-md-12">
+                      <fieldset>
+                        <button type="submit" id="form-submit" class="btn">Send Message Now</button>
+                      </fieldset>
+                    </div>
+                </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    
+
+    <section class="overlay-menu">
+      <div class="container">
+        <div class="row">
+          <div class="main-menu">
+              <ul>
+                  <li>
+                      <a href="{% url 'signup' %}">Join the coven</a>
+                  </li>
+                  <li>
+                      <a href="{% url 'contribute' %}">Contribute to the coven</a>
+                  </li>
+                  <li>
+                      <a href="{% url 'exhibition' %}">Exhibition</a>
+                  </li>
+              </ul>
+              <p>Features</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.11.2.min.js"><\/script>')</script>
+
+    {% load static %}<script src="{% static 'js/vendor/bootstrap.min.js' %}"></script>
+    
+    {% load static %}<script src="{% static 'js/plugins.js' %}"></script>
+    {% load static %}<script src="{% static 'js/main.js' %}"></script>
+
+</body>
+</html>
