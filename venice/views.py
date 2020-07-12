@@ -52,7 +52,7 @@ def convertToBinaryData(filename):
         blobData = file.read()
     return blobData
 def handle_uploaded_file(f,image_name):
-    dir_name= "C:\\Users\HoangChuong\RatingAppProject\\venv\Scripts\mongoteri\\venice\static\images\\"
+    dir_name= "C:\\Users\HoangChuong\\fromHeroku\mongoteri\\venice\static\images\\"
     format = "jpg"
     print("path is ",dir_name+image_name+"."+format)
     with open(dir_name+image_name+"."+format, 'wb+') as destination:
@@ -87,8 +87,8 @@ def upload_art(request):
         print("updated password is ",updated_password)
 
 
-        dir_name_db = "C:\\Users\HoangChuong\RatingAppProject\\venv\Scripts\mongoteri\db.sqlite3"
-        dir_name = "C:\\Users\HoangChuong\RatingAppProject\\venv\Scripts\mongoteri\\venice\static\images\\"
+        dir_name_db = "C:\\Users\HoangChuong\\fromHeroku\mongoteri\db.sqlite3"
+        dir_name = "C:\\Users\HoangChuong\\fromHeroku\mongoteri\\venice\static\images\\"
 
         dbConnection = create_connection(dir_name_db)
         queried_id = get_id(dbConnection,updated_password)
