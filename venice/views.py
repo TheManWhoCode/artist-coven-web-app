@@ -2,30 +2,8 @@ from django.shortcuts import render
 from .models import User, UserGallery
 import hashlib
 from PIL import Image, ExifTags
-from django.db import connection
-import sqlite3
-
-from sqlite3 import Error
 
 # Create your views here.
-
-def get_id(db_conn, password):
-    cur = db_conn.cursor()
-    cur.execute("select id from venice_user where password = ?", (password,))
-    rows = cur.fetchall()
-
-    for row in rows:
-        return row
-
-def create_connection(db_file):
-    try:
-        conn = sqlite3.connect(db_file)
-        return conn
-    except Error as e:
-        print(e)
-
-    return None
-
 def rotate_image(filepath):
   try:
     image = Image.open(filepath)
@@ -52,17 +30,15 @@ def convertToBinaryData(filename):
         blobData = file.read()
     return blobData
 def handle_uploaded_file(f,image_name):
-    dir_name= "C:\\Users\HoangChuong\\fromHeroku\mongoteri\\venice\static\images\\"
     format = "jpg"
-    print("path is ",dir_name+image_name+"."+format)
-    with open(dir_name+image_name+"."+format, 'wb+') as destination:
+    with open("venice/static/images/"+image_name+"."+format, 'wb+') as destination:
         for chunk in f.chunks():
             destination.write(chunk)
 
 def dashboard(request):
+
     user = User.objects.select_related().filter()
     context = {'user_list': user}
-
     return render(request,'dashboard.html',context = context)
 
 def signup(request):
@@ -77,27 +53,16 @@ def signup(request):
             return render(request,'signup_404.html')
     return render(request,'sign_up.html')
 
+
 def upload_art(request):
     if request.method=="POST":
         data = request.POST
-        print("password is ",data['password'])
         hashed_password = hashlib.sha256(data['password'].encode())
         updated_password = hashed_password.hexdigest()
-        print(type(updated_password))
-        print("updated password is ",updated_password)
-
-
-        dir_name_db = "C:\\Users\HoangChuong\\fromHeroku\mongoteri\db.sqlite3"
-        dir_name = "C:\\Users\HoangChuong\\fromHeroku\mongoteri\\venice\static\images\\"
-
-        dbConnection = create_connection(dir_name_db)
-        queried_id = get_id(dbConnection,updated_password)
-        queried_id = queried_id[0]
-        print("queried id is ",queried_id)
+        queried_id = (User.objects.values_list('id').get(password=updated_password))[0]
         handle_uploaded_file(request.FILES['artwork'],data['title'])
         format = "jpg"
-        path = dir_name + data['title'] + "." + format
-        print("path is ",path)
+        path ="venice/static/images/"+ data['title'] + "." + format
         rotate_image(path)
         update_gallery = UserGallery.objects.create(title=data['title'],
                                                     user_id=queried_id,
